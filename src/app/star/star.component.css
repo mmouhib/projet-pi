@@ -1,0 +1,16 @@
+.stars-container{
+ width: 10cm;
+ height:3cm;
+}
+
+.star {
+  cursor: pointer;
+  font-size: 50px;
+}
+
+.star:hover,
+.star.checked::before,
+.star.checked ~ .star::after {
+  content: "\2605";
+  color: gold;
+}

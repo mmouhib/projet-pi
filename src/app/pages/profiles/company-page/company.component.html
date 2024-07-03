@@ -1,0 +1,280 @@
+<!-- <button (click)="logout()" class="bg-slate-500">Logout</button> -->
+
+<div class="flex m-10 mt-20">
+  <section
+    class="flex flex-col p-10 w-80 bg-gradient-to-b from-[#FFFFFF] rounded-2xl"
+  >
+    <app-photo></app-photo>
+
+    <div class="">
+      <li class="flex items-center mt-10">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          width="24"
+          height="24"
+        >
+          <path fill="none" d="M0 0h24v24H0z" />
+          <path
+            d="M21 20h2v2H1v-2h2V3a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v17zm-2 0V4H5v16h14zM8 11h3v2H8v-2zm0-4h3v2H8V7zm0 8h3v2H8v-2zm5 0h3v2h-3v-2zm0-4h3v2h-3v-2zm0-4h3v2h-3V7z"
+            fill="rgba(66,74,136,1)"
+          />
+        </svg>
+        <span class="ml-3">{{
+          (authService.authenticatedUser?.visitor)!.company_name
+        }}</span>
+      </li>
+      <li class="flex items-center mt-10">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          width="24"
+          height="24"
+        >
+          <path fill="none" d="M0 0h24v24H0z" />
+          <path
+            d="M12 20.9l4.95-4.95a7 7 0 1 0-9.9 0L12 20.9zm0 2.828l-6.364-6.364a9 9 0 1 1 12.728 0L12 23.728zM12 13a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 2a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"
+            fill="rgba(66,74,136,1)"
+          />
+        </svg>
+        <span class="ml-3">{{
+          (authService.authenticatedUser?.visitor)!.adress
+        }}</span>
+      </li>
+      <li class="flex items-center mt-10">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          width="24"
+          height="24"
+        >
+          <path fill="none" d="M0 0h24v24H0z" />
+          <path
+            d="M4 22a8 8 0 1 1 16 0h-2a6 6 0 1 0-12 0H4zm8-9c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z"
+            fill="rgba(66,74,136,1)"
+          />
+        </svg>
+        <span class="ml-3"
+          >{{ (authService.authenticatedUser?.visitor)!.firstname }}
+          {{ (authService.authenticatedUser?.visitor)!.lastname }}</span
+        >
+      </li>
+    </div>
+    <div class="border mt-20"></div>
+    <div class="mt-12">
+      <ul>
+        <li class="flex items-center mt-10">
+          <button
+            (click)="
+              showContent1 = true;
+              showContent0 = false;
+              showContent2 = false;
+              showContent3 = false
+            "
+            class="flex text-[#424A88]"
+            [class.text-red-500]="showContent1"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              *ngIf="showContent1"
+            >
+              <path
+                d="M14 14.252V22H4C4 17.5817 7.58172 14 12 14C12.6906 14 13.3608 14.0875 14 14.252ZM12 13C8.685 13 6 10.315 6 7C6 3.685 8.685 1 12 1C15.315 1 18 3.685 18 7C18 10.315 15.315 13 12 13ZM18 17V14H20V17H23V19H20V22H18V19H15V17H18Z"
+                fill="rgba(229, 48, 45, 1)"
+              ></path>
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              *ngIf="!showContent1"
+            >
+              <path
+                d="M14 14.252V22H4C4 17.5817 7.58172 14 12 14C12.6906 14 13.3608 14.0875 14 14.252ZM12 13C8.685 13 6 10.315 6 7C6 3.685 8.685 1 12 1C15.315 1 18 3.685 18 7C18 10.315 15.315 13 12 13ZM18 17V14H20V17H23V19H20V22H18V19H15V17H18Z"
+                fill="rgba(66, 74, 136, 1)"
+              ></path>
+            </svg>
+            <span class="ml-3 pt-1">Ajouter un encadrant</span>
+          </button>
+        </li>
+        <li class="flex items-center mt-10">
+          <button
+            (click)="
+              showContent2 = true;
+              showContent0 = false;
+              showContent1 = false;
+              showContent3 = false
+            "
+            class="flex text-[#424A88]"
+            [class.text-red-500]="showContent2"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              *ngIf="showContent2"
+            >
+              <path
+                d="M11 11V5H13V11H19V13H13V19H11V13H5V11H11Z"
+                fill="rgba(229, 48, 45, 1)"
+              ></path>
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              *ngIf="!showContent2"
+            >
+              <path
+                d="M11 11V5H13V11H19V13H13V19H11V13H5V11H11Z"
+                fill="rgba(66, 74, 136, 1)"
+              ></path>
+            </svg>
+            <span class="ml-3 pt-1">Ajouter une offre</span>
+          </button>
+        </li>
+
+        <li class="flex items-center mt-10">
+          <button
+            (click)="
+              showContent2 = false;
+              showContent0 = true;
+              showContent1 = false;
+              showContent3 = false
+            "
+            [class.text-red-500]="showContent0"
+            class="flex text-[#424A88]"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              *ngIf="showContent0"
+            >
+              <path fill="none" d="M0 0h24v24H0z" />
+              <path
+                d="M4 22a8 8 0 1 1 16 0H4zm8-9c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6z"
+                fill="rgba(229, 48, 45, 1)"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              *ngIf="!showContent0"
+            >
+              <path fill="none" d="M0 0h24v24H0z" />
+              <path
+                d="M4 22a8 8 0 1 1 16 0H4zm8-9c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6z"
+                fill="rgba(66, 74, 136, 1)"
+              />
+            </svg>
+
+            <span class="ml-3 pt-1">Encarants</span>
+          </button>
+        </li>
+        <li class="flex items-center mt-10">
+          <button
+            (click)="
+              showContent2 = false;
+              showContent0 = false;
+              showContent1 = false;
+              showContent3 = true;
+              getCompanyIntershipOffers()
+            "
+            class="flex text-[#424A88]"
+            [class.text-red-500]="showContent3"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              *ngIf="showContent3"
+            >
+              <path fill="none" d="M0 0h24v24H0z" />
+              <path
+                d="M7 5V2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v3h4a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4zm2 8H4v6h16v-6h-5v3H9v-3zm11-6H4v4h5V9h6v2h5V7zm-9 4v3h2v-3h-2zM9 3v2h6V3H9z"
+                fill="rgba(229, 48, 45, 1)"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              *ngIf="!showContent3"
+            >
+              <path fill="none" d="M0 0h24v24H0z" />
+              <path
+                d="M7 5V2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v3h4a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4zm2 8H4v6h16v-6h-5v3H9v-3zm11-6H4v4h5V9h6v2h5V7zm-9 4v3h2v-3h-2zM9 3v2h6V3H9z"
+                fill="rgba(66,74,136,1)"
+              />
+            </svg>
+            <span class="ml-3">Offres</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section
+    class="w-3/4 ml-10 bg-gradient-to-b from-[#FFFFFF] rounded-2xl relative"
+  >
+    <svg
+      class="absolute right-1 -mt-8"
+      (click)="logout()"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      width="24"
+      height="24"
+    >
+      <path fill="none" d="M0 0h24v24H0z" />
+      <path
+        d="M5 22a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v3h-2V4H6v16h12v-2h2v3a1 1 0 0 1-1 1H5zm13-6v-3h-7v-2h7V8l5 4-5 4z"
+        fill="rgba(66,74,136,1)"
+      />
+    </svg>
+
+    <div *ngIf="showContent0" class="relative">
+      <h1
+        class="text-4xl font-extrabold text-[#424A88] absolute -top-8 left-24"
+      >
+        Nos encadrants
+      </h1>
+      <app-supervisor-card></app-supervisor-card>
+    </div>
+
+    <ng-container *ngIf="showContent1">
+      <div class="mt-5">
+        <app-add-supervisor></app-add-supervisor>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="showContent2">
+      <div class="mt-5">
+        <app-add-offer></app-add-offer>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="showContent3">
+      <div class="mt-5 relative">
+        <h1
+          class="text-4xl font-extrabold text-[#424A88] absolute -top-8 left-24"
+        >
+          Nos offres
+        </h1>
+        <app-supervisor-offer-card
+          [SupervisorIntershipOffers]="SupervisorIntershipOffers"
+        ></app-supervisor-offer-card>
+      </div>
+    </ng-container>
+  </section>
+</div>

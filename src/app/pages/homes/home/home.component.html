@@ -1,0 +1,197 @@
+<div>
+  <section class="flex justify-center">
+    <div class="flex flex-col mr-64 my-16 mt-24 p-12 py-28">
+      <h1 class="text-[#E5302D] text-5xl font-sans font-bold">
+        Candidat ou recruteur ? <br />
+        Contactez-nous !
+      </h1>
+      <div
+        class="flex mx-auto justify-between relative w-80 bg-white border rounded-full border-[#E5302D] m-4"
+      >
+        <div
+          class="top-0 right-0 absolute w-1/2 h-full bg-[#E5302D] rounded-full duration-500"
+        ></div>
+        <button
+          class="w-1/2 p-4 outline-none rounded-full bg-transparent relative text-[#E5302D]"
+          routerLink="/offerDetails"
+        >
+          Nos offres
+        </button>
+        <button
+          class="w-1/2 p-4 outline-none rounded-full bg-transparent relative text-white"
+          routerLink="/cvtheque"
+        >
+          CVthéque
+        </button>
+      </div>
+    </div>
+
+    <div class="flex-col">
+      <div class="img">
+        <img src="../../assets/images/home1.png" alt="pas de photo" />
+      </div>
+    </div>
+  </section>
+  <section class="flex-col px-96 justify-center items-center my-56">
+    <h2 class="text-[#E5302D] opacity-100 ml-96 font-semibold">
+      formulaire de contact
+    </h2>
+    <br />
+    <div
+      class="w-11/12c p-6 bg-gradient-to-b from-[#FFFFFF] bg-auto rounded-md"
+    >
+      <form [formGroup]="frm" (ngSubmit)="onPost()">
+        <div class="flex justify-between w-full">
+          <div class="flex flex-col w-1/2">
+            <div class="flex flex-col mt-4 ml-3 w-11/12 relative">
+              <input
+                type="text"
+                id="prenom"
+                placeholder="prenom"
+                class="peer w-full bg-transparent border-b border-black border-opacity-40 focus:outline-none text-black placeholder-transparent"
+                autocomplete="off"
+                formControlName="firstname"
+                required
+              />
+              <label
+                for="prenom"
+                class="absolute left-0 -mt-3.5 text-slate-500 peer-placeholder-shown:top-2 peer-focus:-top-1 peer-focus:text-xs transition-all"
+                >Prenom<span class="text-[#E5302D] ml-1">*</span></label
+              >
+            </div>
+            <div
+              class="msg error text-xs ml-3 text-[#E5302D]"
+              *ngIf="
+                f['firstname'].invalid &&
+                (f['firstname'].dirty || f['firstname'].touched)
+              "
+            >
+              <span *ngIf="f['firstname'].errors?.['required']"
+                >Prenom obligatoire</span
+              >
+            </div>
+          </div>
+          <div class="flex flex-col w-1/2">
+            <div class="flex flex-col mt-4 ml-3 w-11/12 relative">
+              <input
+                type="text"
+                id="nom"
+                placeholder="nom"
+                class="peer w-full bg-transparent border-b border-black border-opacity-40 focus:outline-none text-black placeholder-transparent"
+                autocomplete="off"
+                formControlName="lastname"
+                required
+              />
+              <label
+                for="nom"
+                class="absolute left-0 -mt-3.5 text-slate-500 peer-placeholder-shown:top-2 peer-focus:-top-1 peer-focus:text-xs transition-all"
+                >Nom<span class="text-[#E5302D] ml-1">*</span></label
+              >
+            </div>
+            <div
+              class="msg error text-xs ml-3 text-[#E5302D]"
+              *ngIf="
+                f['lastname'].invalid &&
+                (f['lastname'].dirty || f['lastname'].touched)
+              "
+            >
+              <span *ngIf="f['lastname'].errors?.['required']"
+                >Nom obligatoire</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-between w-full">
+          <div class="flex flex-col w-1/2">
+            <div class="flex flex-col mt-8 ml-3 w-11/12 relative">
+              <input
+                type="email"
+                id="email"
+                placeholder="email"
+                class="peer w-full bg-transparent border-b border-black border-opacity-40 focus:outline-none text-black placeholder-transparent"
+                autocomplete="off"
+                formControlName="recipientEmail"
+                required
+              />
+              <label
+                for="email"
+                class="absolute left-0 -mt-4 text-slate-500 peer-placeholder-shown:top-2 peer-focus:-top-1 peer-focus:text-xs transition-all"
+                >Email<span class="text-[#E5302D] ml-1">*</span></label
+              >
+            </div>
+            <div
+              class="msg error text-xs ml-3 text-[#E5302D]"
+              *ngIf="
+                f['recipientEmail'].invalid &&
+                (f['recipientEmail'].dirty || f['recipientEmail'].touched)
+              "
+            >
+              <span *ngIf="f['recipientEmail'].errors?.['required']"
+                >Email obligatoire</span
+              >
+            </div>
+          </div>
+          <div class="flex flex-col w-1/2">
+            <div
+              class="flex flex-col ml-3 w-11/12 relative"
+              style="margin-top: 33.25px"
+            >
+              <select
+                id="user_type"
+                class="peer w-full bg-transparent border-b border-black opacity-40 focus:outline-none text-black placeholder-transparent"
+                autocomplete="off"
+                formControlName="user_type"
+                required
+              >
+                <option id="o1">Entreprise</option>
+                <option id="o2">Stagiaire</option>
+                <option id="o3">Autre</option>
+              </select>
+
+              <label
+                for="user_type"
+                class="absolute left-0 -mt-2 text-slate-500 peer-placeholder-shown:top-2 peer-focus:-top-1 peer-focus:text-xs transition-all"
+                >Vous-êtes ?</label
+              >
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col mt-10 ml-3 relative">
+          <textarea
+            style="width: 17.85cm"
+            id="message"
+            class="w-full h-24 bg-transparent border border-black border-opacity-40 focus:outline-none text-black placeholder-transparent"
+            autocomplete="off"
+            formControlName="message"
+            placeholder="message"
+            required
+          ></textarea>
+          <label for="message" class="absolute left-0 -mt-6 text-slate-500"
+            >message<span class="text-[#E5302D] ml-1">*</span></label
+          >
+        </div>
+        <div
+          class="msg error text-xs ml-3 text-[#E5302D]"
+          *ngIf="
+            f['message'].invalid && (f['message'].dirty || f['message'].touched)
+          "
+        >
+          <span *ngIf="f['message'].errors?.['required']"
+            >message obligatoire</span
+          >
+        </div>
+        <div class="flex justify-around items-center my-6">
+          <button
+            mat-button
+            (click)="openSnackBar('mail envoyé avec succes', 'fermer')"
+            class="w-32 h-10 text-white bg-[#E73130] rounded-full"
+            [disabled]="frm.invalid"
+          >
+            Envoyer
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+</div>
+

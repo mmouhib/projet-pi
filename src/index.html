@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>FrontEnd</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="mat-typography bg-gradient-to-b from-[#FEFEFE] to-[#89C2FD] bg-[#FEFEFE] flex-1 min-h-screen bg-cover bg-no-repeat bg-fixed"
+  >
+    <nav class="top-0 left-0 w-full">
+      <div class="container m-auto flex justify-between items-center">
+        <a href="/home">
+          <!-- <img class="w-40 h-24 ml-4" src="assets/images/logo.png" alt=""/>z -->
+        </a>
+        <ul
+          class="hidden md:flex items-center pr-10 text-base font-semibold cursor-pointer"
+        >
+          <li class="text-[#424A88] hover:text-[#E5302D] py-4 px-6">
+            <a href="/intern-home">Je cherche un stage</a>
+          </li>
+          <li class="text-[#424A88] hover:text-[#E5302D] py-4 px-6">
+            <a href="/company-home">Je recrute</a>
+          </li>
+          <li class="text-[#424A88] hover:text-[#E5302D] py-4 px-6">
+            <a href="/espace">Espace encadrant</a>
+          </li>
+          <li class="text-[#424A88] hover:text-[#E5302D] py-4 px-6">
+           <a href="#1">Contact</a>
+          </li>
+        </ul>
+        <button
+          class="block md:hidden py-3 px-4 mx-2 focus:outline-none hover:bg-gray-200 group"
+        >
+          <div class="w-5 h-1 bg-gray-600 mb-1"></div>
+          <div class="w-5 h-1 bg-gray-600 mb-1"></div>
+          <div class="w-5 h-1 bg-gray-600"></div>
+          <div
+            class="absolute top-0 -right-full w-8/12 h-60 bg-white border opacity-0 group-focus:right-0 group-focus:opacity-100 transition-all duration-300"
+          >
+            <ul
+              class="flex flex-col items-center w-full text-base cursor-pointer pt-10"
+            >
+              <li class="hover:bg-gray-200 py-4 px-6 w-full">
+                Je cherche un stage
+              </li>
+              <li class="hover:bg-gray-200 py-4 px-6 w-full">Je recrute</li>
+              <li class="hover:bg-gray-200 py-4 px-6 w-full">
+                Espace encadrant
+              </li>
+              <li class="hover:bg-gray-200 py-4 px-6 w-full">Contacts</li>
+            </ul>
+          </div>
+        </button>
+      </div>
+    </nav>
+
+    <app-root></app-root>
+    <router-outlet></router-outlet>
+
+  </body>
+</html>
